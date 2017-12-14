@@ -11,7 +11,7 @@
   },
   "scripts": {
     "install": "node ./build.js",
-    "start": "./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --logLevel 4 --tmpdir /var/www/symfony-website/Symfony/web/charts/",
+    "start": "./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --logLevel 4",
     "forever": "forever start ./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --tmpdir ../symfony-website/Symfony/web/charts"
   },
   "main": "lib/index.js",
