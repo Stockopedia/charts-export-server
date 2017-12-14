@@ -12,7 +12,7 @@
   "scripts": {
     "install": "node ./build.js",
     "start": "./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --logLevel 4",
-    "forever": "forever start ./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --tmpdir ../symfony-website/Symfony/web/charts"
+    "forever": "forever start ./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --workers 30"
   },
   "main": "lib/index.js",
   "license": "MIT",
