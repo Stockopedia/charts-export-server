@@ -46,12 +46,14 @@ const cdnScriptsCommon = [
 
 const cdnScriptsStyled = [
     "stock/js/highstock.js",
+    "stock/{{version}}/indicators/indicators.js",
     "js/highcharts-more.js",
     "maps/js/modules/exporting.js"
 ];
 
 const cdnScriptsStandard = [
     "stock/{{version}}/highstock.js",
+	"stock/{{version}}/indicators/indicators.js",
     "{{version}}/highcharts-more.js",
     "{{version}}/modules/exporting.js"
 ];
