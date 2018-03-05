@@ -1,3 +1,21 @@
+# 2.0.8
+  
+  * Fixed `tmpdir` when starting in server mode
+
+# 2.0.7
+
+  * Now including sunburst/xrange/streamgraph/tilemap when baking with a  supported version
+  * Added package-lock.json
+
+# 2.0.6
+  
+  * Fixed issue potentially causing SVG exports to hang
+
+# 2.0.5
+
+  * Increased timeout for rendering by 1 second
+  * Fixed port numbers for stress test
+
 # 2.0.4
   
   * Fixed bug causing unpredictable export results if one or more exported
