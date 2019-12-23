@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.github": true,
+        ".github": true,
+        ".idea": true
+    },
+    "explorerExclude.backup": null
+}

@@ -65,7 +65,7 @@ function doDone(data) {
     } catch (e) {
         system.stderr.writeLn('Error generating chart');
         system.stderr.flush();
-        return console.log(e);
+        return console.log('doDone:', e);
     }
 
     system.stdout.write(data);
@@ -96,10 +96,18 @@ function loop() {
     page.settings.userAgent = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0';
 
     function injectJSString(name, script) {
+
+        if (typeof script !== 'string' && !(script instanceof String)) {
+          try {
+            script = JSON.stringify(script);
+          } catch(e) {}
+        }
+
         page.evaluate(function (name, js) {
             if (js === 'null' || typeof js === 'undefined' || !js) {
                 return;
             }
+
 
             var script = document.createElement('script');
             script.type = 'text/javascript';
@@ -604,7 +612,6 @@ function loop() {
         }
 
     } else {
-
         //Inject the CSS into the template
         if (data.styledMode) {
             cachedCopy = cachedContentStyled.replace('{{css}}', css);
