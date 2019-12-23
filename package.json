@@ -13,7 +13,8 @@
     "preinstall": "node ./pre.build.js",
     "postinstall": "node ./post.build.js",
     "install": "node ./build.js",
-    "run": "node /bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host localhost --workers 30 --queueSize 10"
+    "start": "node /bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host 0.0.0.0 --workers 30 --queueSize 10",
+    "forever": "forever start ./bin/cli.js --enableServer 1 --killSignal SIGNT --port 5000 --host 0.0.0.0 --workers 8 --queueSize 10"
   },
   "main": "lib/index.js",
   "license": "MIT",

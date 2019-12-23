@@ -1,4 +1,4 @@
-FROM node:9-alpine
+FROM node:10-alpine
 
 # Build-time
 RUN set -ex \
@@ -13,11 +13,11 @@ RUN chown -R app /usr/charts-server
 USER app
 
 ENV ACCEPT_HIGHCHARTS_LICENSE YES
-ENV HIGHCHARTS_VERSION latest
 ENV HIGHCHARTS_USE_STYLED NO
 RUN npm install
 
 USER root
+RUN npm install forever -g
 RUN apk del .build-deps
 
 # Run-time
@@ -25,4 +25,4 @@ USER app
 
 EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "forever"]
