@@ -1,4 +1,4 @@
-FROM node:9-alpine
+FROM node:12-alpine
 
 # Build-time
 RUN set -ex \
@@ -13,8 +13,9 @@ RUN chown -R app /usr/charts-server
 USER app
 
 ENV ACCEPT_HIGHCHARTS_LICENSE YES
-ENV HIGHCHARTS_VERSION latest
 ENV HIGHCHARTS_USE_STYLED NO
+ENV SERVER_CYCLE_MINUTES 720
+ENV HIGHCHARTS_VERSION "6.2.0"
 RUN npm install
 
 USER root
